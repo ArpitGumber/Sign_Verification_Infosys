@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Signature Verification</h2>
+    <form method="POST" enctype="multipart/form-data">  <!-- enctype is required for file uploads -->
+        {% csrf_token %}
+        <div>
+            <label for="purpose">Select Purpose:</label>
+            {{ form.purpose }}  <!-- This renders the choice field -->
+        </div>
+        <div>
+            <label for="image">Upload Signature:</label>
+            {{ form.image }}  <!-- This renders the file input -->
+        </div>
+        <button type="submit">Verify</button>  <!-- Submit button -->
+    </form>
+</div>
+{% endblock %}

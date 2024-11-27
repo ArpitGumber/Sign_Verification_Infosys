@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Signature Verification{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Signature Verification System</h1>
+        <nav>
+            <a href="{% url 'index' %}">Home</a> |
+            <a href="{% url 'registration' %}">Register</a> |
+            <a href="{% url 'login' %}">Login</a> |
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'predict' %}">Results</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Signature Verification System 
+            By - Arpit Gumber
+            
+        </p>
+    </footer>
+</body>
+</html>
